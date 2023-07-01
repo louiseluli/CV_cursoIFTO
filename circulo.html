@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+      }
+
+      .circulo,
+      .circulo::before {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border-top: 20px solid #f8d33b;
+        border-right: 20px solid #f8d33b;
+        border-bottom: 20px solid white;
+        border-left: 20px solid white;
+        transform: rotate(45deg);
+        color: #f8d33b;
+        font-size: 36px;
+        line-height: 100px;
+        text-align: center;
+        position: relative;
+        padding: 0;
+        margin: 0;
+      }
+
+      .temp {
+        margin: 200px auto;
+      }
+
+      .circulo::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        transform: rotate(0);
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+      }
+
+      .circulo.p90::before {
+        transform: rotate(calc(180deg * (90 - 50) / 50));
+      }
+      .circulo.p85::before {
+        transform: rotate(calc(180deg * (85 - 50) / 50));
+      }
+      .circulo.p80::before {
+        transform: rotate(calc(180deg * (80 - 50) / 50));
+      }
+      .circulo.p75::before {
+        transform: rotate(calc(180deg * (75 - 50) / 50));
+      }
+      .circulo.p70::before {
+        transform: rotate(calc(180deg * (70 - 50) / 50));
+      }
+
+      .circulo > span {
+        transform: rotate(-45deg);
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circulo p90"><span>90%</span></div>
+    <div class="circulo p85"><span>85%</span></div>
+    <div class="circulo p80"><span>80%</span></div>
+    <div class="circulo p75"><span>75%</span></div>
+    <div class="circulo p70"><span>70%</span></div>
+    <script>
+      const circulos = document.querySelectorAll(".circulo");
+      circulos.forEach(item => {
+        const span = item.querySelector("span");
+        const perc = span.innerHTML.replace("%", "");
+        item.classList.add("p+perc");
+      });
+    </script>
+  </body>
+</html>

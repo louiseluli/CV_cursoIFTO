@@ -1,0 +1,43 @@
+@media only screen and (max-width: 720px) {
+  #about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #about .introduction > * {
+    width: 100%;
+  }
+
+  #about .introduction > h1,
+  #about .introduction > h3 {
+    text-align: center;
+  }
+
+  #contact {
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+
+  #education {
+    width: 100%;
+    border-left: none;
+  }
+
+  #education .legenda {
+    width: 450px;
+    left: calc(50%-225px);
+    text-align: center;
+  }
+
+  #education ul li {
+    width: 100%;
+    max-width: none;
+    text-align: center;
+  }
+
+  #yelEdu.legenda {
+    text-align: center;
+    left: 1px;
+  }
+}
